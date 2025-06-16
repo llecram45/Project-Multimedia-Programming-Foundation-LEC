@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO - Masuk ke Akun Anda</title>
+    <link rel="stylesheet" href="Login.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="Home.html" class="logo">LOGO</a>
+            <nav class="nav-menu">
+                <a href="Home.html">Beranda</a>
+                <a href="Product.html">Produk</a>
+                <a href="About.html">Tentang</a>
+                <a href="Login.html" class="active">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="form-container">
+            <div class="form-box">
+                <h2>Masuk Akun</h2>
+                <form action="Profile.html">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn-form">Masuk</button>
+                    <p class="form-switch">Belum punya akun? <a href="Register.html">Daftar di sini</a></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        </footer>
+
+    <script>
+    const loginForm = document.querySelector('form');
+
+    loginForm.addEventListener('submit', function(event) {
+        const userDataString = localStorage.getItem('userDatabase');
+
+        if (userDataString) {
+            localStorage.setItem('currentUser', userDataString);
+            
+            localStorage.setItem('isLoggedIn', 'true');
+            
+            console.log('Login berhasil, data pengguna aktif:', JSON.parse(userDataString));
+        } else {
+            alert('Tidak ada data pengguna terdaftar. Silakan daftar terlebih dahulu.');
+            event.preventDefault();
+        }
+    });
+    </script>
+</body>
+</html>

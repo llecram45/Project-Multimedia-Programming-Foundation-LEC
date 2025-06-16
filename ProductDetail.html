@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO - Detail Produk</title>
+    <link rel="stylesheet" href="ProductDetail.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="Home.html" class="logo">LOGO</a>
+            <nav class="nav-menu">
+                <a href="Home.html">Beranda</a>
+                <a href="Product.html" class="active">Produk</a>
+                <a href="About.html">Tentang</a>
+                <a href="Profile.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="product-detail-layout">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="images/produk3.png" alt="Sepatu Lari Pro">
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="images/produk3-thumb1.png" alt="Thumbnail 1" class="active">
+                        <img src="images/produk3-thumb2.png" alt="Thumbnail 2">
+                        <img src="images/produk3-thumb3.png" alt="Thumbnail 3">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Sepatu Lari Pro</h1>
+                    <p class="product-price">Rp1.200.000</p>
+                    <p class="product-description">
+                        Sepatu lari berperforma tinggi yang dirancang untuk kecepatan dan kenyamanan maksimal. Dengan teknologi bantalan terbaru dan material yang ringan, sepatu ini siap menemani Anda memecahkan rekor pribadi.
+                    </p>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="size">Ukuran:</label>
+                            <select name="size" id="size">
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="quantity">Jumlah:</label>
+                            <div class="quantity-selector">
+                                <button>-</button>
+                                <input type="text" value="1">
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-add-to-cart">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h3>Kontak</h3>
+                <p class="contact-item"><i class="fas fa-envelope"></i> email@toko.com</p>
+                <p class="contact-item"><i class="fas fa-phone"></i> +62 123 4567 890</p>
+                <p class="contact-item"><i class="fas fa-map-marker-alt"></i> Jl. Binus Raya No. 1, Jakarta</p>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="Home.html">Beranda</a></li>
+                    <li><a href="Product.html">Produk</a></li>
+                    <li><a href="About.html">Tentang</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

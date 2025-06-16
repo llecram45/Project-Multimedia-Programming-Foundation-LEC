@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO - Profil Saya</title>
+    <link rel="stylesheet" href="Profile.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="Home.html" class="logo">LOGO</a>
+            <nav class="nav-menu">
+                <a href="Home.html">Beranda</a>
+                <a href="Product.html">Produk</a>
+                <a href="About.html">Tentang</a>
+                <a href="Profile.html" class="active">Profil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Akun Saya</h1>
+            <div class="profile-layout">
+                <aside class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">MV</div>
+                        <h3 class="user-name">Max Verstappen</h3>
+                        <p class="user-email">max.verstappen@example.com</p>
+                    </div>
+                    <nav class="profile-nav">
+                        <a href="#" class="active"><i class="fas fa-user-circle"></i> Informasi Akun</a>
+                        <a href="#"><i class="fas fa-history"></i> Riwayat Transaksi</a>
+                        <a href="#"><i class="fas fa-star"></i> Point Rewards</a>
+                        <a href="home.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </nav>
+                </aside>
+                <section class="profile-content">
+                    <h2>Informasi Akun</h2>
+                    <div class="content-box">
+                        <div class="info-row">
+                            <span class="info-label">Nama Lengkap</span>
+                            <span class="info-value">Max Verstappen</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">max.verstappen@example.com</span>
+                        </div>
+                         <div class="info-row">
+                            <span class="info-label">Password</span>
+                            <span class="info-value">********</span>
+                        </div>
+                        <button class="btn-edit">Ubah Data</button>
+                    </div>
+
+                    <h2>Point Rewards Anda</h2>
+                    <div class="content-box points-box">
+                        <i class="fas fa-star"></i>
+                        <div class="points-info">
+                            <p>Total Poin Anda</p>
+                            <p class="points-total">1,250 Poin</p>
+                        </div>
+                        <a href="#" class="btn-redeem">Tukar Poin</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+    function displayProfileData() {
+        const currentUserString = localStorage.getItem('currentUser');
+        
+        if (currentUserString) {
+            const user = JSON.parse(currentUserString);
+
+            const nameParts = user.name.split(' ');
+            const initials = nameParts.map(part => part[0]).join('').toUpperCase();
+            
+            document.querySelector('.user-avatar').textContent = initials;
+
+            document.querySelector('.user-name').textContent = user.name;
+            document.querySelector('.user-email').textContent = user.email;
+
+            const infoValues = document.querySelectorAll('.info-value');
+            if (infoValues.length >= 2) {
+                infoValues[0].textContent = user.name;
+                infoValues[1].textContent = user.email;
+            }
+        } else {
+            window.location.href = 'login.html';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', displayProfileData);
+
+    const logoutButton = document.querySelector('.logout');
+    logoutButton.addEventListener('click', function(event) {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('currentUser');
+        
+        console.log('Logout berhasil, data sesi dihapus.');
+    });
+    </script>
+</body>
+</html>
+</body>
+</html>
