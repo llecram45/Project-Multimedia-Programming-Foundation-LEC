@@ -47,6 +47,11 @@ body {
     color: var(--dark-color);
 }
 
+.logo img{
+    width: 25%;
+    height: auto;
+}
+
 .header .nav-menu a {
     text-decoration: none;
     color: var(--text-color);
